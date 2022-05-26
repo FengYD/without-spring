@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <display-name>Without Spring</display-name>
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/mybatis-config.xml</param-value>
+    </context-param>
+    <!--    <servlet>-->
+<!--        <servlet-name>helloServlet</servlet-name>-->
+<!--        <servlet-class>org.example.withoutspring.servlet.HelloServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>helloServlet</servlet-name>-->
+<!--        <url-pattern>/hello/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>indexServlet</servlet-name>-->
+<!--        <servlet-class>org.example.withoutspring.servlet.IndexServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>indexServlet</servlet-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <servlet>
+        <servlet-name>myDispatcherServlet</servlet-name>
+        <servlet-class>org.example.withoutspring.controller.MyDispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>defaultConfig</param-name>
+            <param-value>application.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>myDispatcherServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+</web-app>
