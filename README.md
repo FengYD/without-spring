@@ -4,6 +4,8 @@
 
 - redis
 - mysql
+- minio
+- kafka
 - es
 - hive
 
