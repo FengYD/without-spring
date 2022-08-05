@@ -2,9 +2,9 @@
 
 离开 Spring 不会写代码系列
 
-- redis
-- mysql
-- minio
+- [x] redis
+- [x] mysql
+- [x] minio
 - kafka
 - es
 - hive

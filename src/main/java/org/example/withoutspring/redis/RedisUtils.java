@@ -45,7 +45,6 @@ public class RedisUtils {
             conf.setMaxIdle(5);
             //设置是否提前进行测试借用
             conf.setTestOnBorrow(true);
-
             //新建 jedis 连接池
             jedisPool = new JedisPool(conf, host, Integer.parseInt(port), 10000, password);
         }
@@ -91,5 +90,6 @@ public class RedisUtils {
             e.printStackTrace();
         }
     }
+
 
 }
